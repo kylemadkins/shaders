@@ -36,6 +36,7 @@ class App {
     const texture1 = loader.load("../textures/cat.jpg");
     texture1.wrapS = THREE.MirroredRepeatWrapping; // THREE.RepeatWrapping // THREE.ClampToEdgeWrapping
     texture1.wrapT = THREE.MirroredRepeatWrapping;
+    texture1.magFilter = THREE.NearestFilter;
     const texture2 = loader.load("../textures/tart.png");
 
     const material = new THREE.ShaderMaterial({
