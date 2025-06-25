@@ -33,11 +33,13 @@ class App {
     const fsh = await fetch("./shaders/fragment-shader.glsl");
 
     const loader = new THREE.TextureLoader();
-    const texture = loader.load("../textures/cat.jpg");
+    const texture1 = loader.load("../textures/cat.jpg");
+    const texture2 = loader.load("../textures/water.png");
 
     const material = new THREE.ShaderMaterial({
       uniforms: {
-        diffuse: { value: texture },
+        diffuse1: { value: texture1 },
+        diffuse2: { value: texture2 },
         tint: { value: new THREE.Vector4(1, 0, 1, 1) },
       },
       vertexShader: await vsh.text(),
