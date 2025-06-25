@@ -34,7 +34,9 @@ class App {
 
     const loader = new THREE.TextureLoader();
     const texture1 = loader.load("../textures/cat.jpg");
-    const texture2 = loader.load("../textures/water.png");
+    texture1.wrapS = THREE.MirroredRepeatWrapping; // THREE.RepeatWrapping // THREE.ClampToEdgeWrapping
+    texture1.wrapT = THREE.MirroredRepeatWrapping;
+    const texture2 = loader.load("../textures/tart.png");
 
     const material = new THREE.ShaderMaterial({
       uniforms: {
